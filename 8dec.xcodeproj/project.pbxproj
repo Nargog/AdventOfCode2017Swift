@@ -14,6 +14,10 @@
 		4941251D1FDF349D00F1DD42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4941251B1FDF349D00F1DD42 /* LaunchScreen.storyboard */; };
 		494125281FDF349D00F1DD42 /* _decTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494125271FDF349D00F1DD42 /* _decTests.swift */; };
 		494125331FDF349D00F1DD42 /* _decUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494125321FDF349D00F1DD42 /* _decUITests.swift */; };
+		494125411FE05C2800F1DD42 /* dec8.txt in Resources */ = {isa = PBXBuildFile; fileRef = 494125401FE05C2800F1DD42 /* dec8.txt */; };
+		494125431FE05CC400F1DD42 /* SupportMHT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494125421FE05CC400F1DD42 /* SupportMHT.swift */; };
+		4999AA3F1FE6C08C00F4E315 /* dec11.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4999AA3E1FE6C08C00F4E315 /* dec11.txt */; };
+		49C7687A1FE1DEFF0037ADFA /* 9dec.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49C768791FE1DEFF0037ADFA /* 9dec.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		4941252E1FDF349D00F1DD42 /* 8decUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 8decUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		494125321FDF349D00F1DD42 /* _decUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _decUITests.swift; sourceTree = "<group>"; };
 		494125341FDF349D00F1DD42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		494125401FE05C2800F1DD42 /* dec8.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dec8.txt; sourceTree = "<group>"; };
+		494125421FE05CC400F1DD42 /* SupportMHT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportMHT.swift; sourceTree = "<group>"; };
+		4999AA3E1FE6C08C00F4E315 /* dec11.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dec11.txt; sourceTree = "<group>"; };
+		49C768791FE1DEFF0037ADFA /* 9dec.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9dec.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +106,15 @@
 			isa = PBXGroup;
 			children = (
 				494125121FDF349D00F1DD42 /* AppDelegate.swift */,
+				494125401FE05C2800F1DD42 /* dec8.txt */,
+				49C768791FE1DEFF0037ADFA /* 9dec.txt */,
+				4999AA3E1FE6C08C00F4E315 /* dec11.txt */,
 				494125141FDF349D00F1DD42 /* ViewController.swift */,
 				494125161FDF349D00F1DD42 /* Main.storyboard */,
 				494125191FDF349D00F1DD42 /* Assets.xcassets */,
 				4941251B1FDF349D00F1DD42 /* LaunchScreen.storyboard */,
 				4941251E1FDF349D00F1DD42 /* Info.plist */,
+				494125421FE05CC400F1DD42 /* SupportMHT.swift */,
 			);
 			path = 8dec;
 			sourceTree = "<group>";
@@ -232,8 +244,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49C7687A1FE1DEFF0037ADFA /* 9dec.txt in Resources */,
+				4999AA3F1FE6C08C00F4E315 /* dec11.txt in Resources */,
 				4941251D1FDF349D00F1DD42 /* LaunchScreen.storyboard in Resources */,
 				4941251A1FDF349D00F1DD42 /* Assets.xcassets in Resources */,
+				494125411FE05C2800F1DD42 /* dec8.txt in Resources */,
 				494125181FDF349D00F1DD42 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +276,7 @@
 			files = (
 				494125151FDF349D00F1DD42 /* ViewController.swift in Sources */,
 				494125131FDF349D00F1DD42 /* AppDelegate.swift in Sources */,
+				494125431FE05CC400F1DD42 /* SupportMHT.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
