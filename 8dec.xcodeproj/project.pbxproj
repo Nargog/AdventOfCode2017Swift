@@ -17,6 +17,8 @@
 		494125411FE05C2800F1DD42 /* dec8.txt in Resources */ = {isa = PBXBuildFile; fileRef = 494125401FE05C2800F1DD42 /* dec8.txt */; };
 		494125431FE05CC400F1DD42 /* SupportMHT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494125421FE05CC400F1DD42 /* SupportMHT.swift */; };
 		4999AA3F1FE6C08C00F4E315 /* dec11.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4999AA3E1FE6C08C00F4E315 /* dec11.txt */; };
+		49C585DC1FE84CAC00D221DF /* 12dectst.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49C585DA1FE84CAC00D221DF /* 12dectst.txt */; };
+		49C585DD1FE84CAC00D221DF /* 12dec.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49C585DB1FE84CAC00D221DF /* 12dec.txt */; };
 		49C7687A1FE1DEFF0037ADFA /* 9dec.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49C768791FE1DEFF0037ADFA /* 9dec.txt */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,8 @@
 		494125401FE05C2800F1DD42 /* dec8.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dec8.txt; sourceTree = "<group>"; };
 		494125421FE05CC400F1DD42 /* SupportMHT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportMHT.swift; sourceTree = "<group>"; };
 		4999AA3E1FE6C08C00F4E315 /* dec11.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dec11.txt; sourceTree = "<group>"; };
+		49C585DA1FE84CAC00D221DF /* 12dectst.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 12dectst.txt; sourceTree = "<group>"; };
+		49C585DB1FE84CAC00D221DF /* 12dec.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 12dec.txt; sourceTree = "<group>"; };
 		49C768791FE1DEFF0037ADFA /* 9dec.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 9dec.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +113,8 @@
 				494125401FE05C2800F1DD42 /* dec8.txt */,
 				49C768791FE1DEFF0037ADFA /* 9dec.txt */,
 				4999AA3E1FE6C08C00F4E315 /* dec11.txt */,
+				49C585DB1FE84CAC00D221DF /* 12dec.txt */,
+				49C585DA1FE84CAC00D221DF /* 12dectst.txt */,
 				494125141FDF349D00F1DD42 /* ViewController.swift */,
 				494125161FDF349D00F1DD42 /* Main.storyboard */,
 				494125191FDF349D00F1DD42 /* Assets.xcassets */,
@@ -248,7 +254,9 @@
 				4999AA3F1FE6C08C00F4E315 /* dec11.txt in Resources */,
 				4941251D1FDF349D00F1DD42 /* LaunchScreen.storyboard in Resources */,
 				4941251A1FDF349D00F1DD42 /* Assets.xcassets in Resources */,
+				49C585DC1FE84CAC00D221DF /* 12dectst.txt in Resources */,
 				494125411FE05C2800F1DD42 /* dec8.txt in Resources */,
+				49C585DD1FE84CAC00D221DF /* 12dec.txt in Resources */,
 				494125181FDF349D00F1DD42 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,7 +19,89 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-  
+    
+    
+    @IBAction func btn12dec(_ sender: Any) {
+        
+        
+        let fileURL = Bundle.main.url(forResource:"12dec", withExtension: "txt")
+        
+        // print("\(String(describing: fileURL))")
+        var fileData:String?
+        
+        do {
+            fileData = try String(contentsOf: fileURL!)
+            // print(fileData!)
+            
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        
+        let indata = spaceSeparated(data: fileData!)
+        var unikaSets = [Set<String>]()
+        var set = Set<String>()
+        var sets = [Set<String>]()
+        
+        for index in 0...indata.count-1{
+            //print(indata[index])
+            set.insert(indata[index][0])
+            for indexSets in 2...indata[index].count-1{
+                set.insert(indata[index][indexSets])
+            }
+            sets.append(set)
+            set.removeAll()
+        }
+        
+        //print(sets)
+        
+        var conectedToNoll = Set<String>()
+        var firstSet = true
+        var counter = 0   //Counter to se how long we have come
+        let noSets = sets.count // Number of sets
+        
+       
+        for set in sets {
+            print("\(counter) of \(noSets)")
+            counter += 1
+            
+            conectedToNoll = conectedToNoll.union(set)
+            
+            var antalItems = conectedToNoll.count
+            
+            repeat {
+                antalItems = conectedToNoll.count
+                for indexUnion in 0...sets.count-1{
+                    
+                    if !conectedToNoll.isDisjoint(with:sets[indexUnion]){
+                        conectedToNoll = conectedToNoll.union(sets[indexUnion])
+                    }
+                    
+                }
+            } while antalItems < conectedToNoll.count
+            //print(conectedToNoll.sorted())
+            if firstSet{
+                print("Programs connected to program 0:\(conectedToNoll.count)")
+                firstSet = false
+            }
+            var isUnik = true
+            for unikSet in unikaSets{
+                if unikSet == conectedToNoll{
+                    isUnik = false
+                }
+                
+            }
+            if isUnik {
+                unikaSets.append(conectedToNoll)
+            }
+            conectedToNoll.removeAll()
+        }
+        
+        print("Unika sets: \(unikaSets.count)")
+        
+
+        
+    }
     @IBAction func btn11dec(_ sender: Any) {
         
         let fileURL = Bundle.main.url(forResource:"dec11", withExtension: "txt")

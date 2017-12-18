@@ -50,6 +50,14 @@
                                     <action selector="btn11dec:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kZm-Th-Ggd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNk-tn-V6B">
+                                <rect key="frame" x="136" y="470" width="102" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="12dec/steg1&amp;2"/>
+                                <connections>
+                                    <action selector="btn12dec:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y8W-3x-GXU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -57,6 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="112.8" y="81.409295352323838"/>
         </scene>
     </scenes>
 </document>
