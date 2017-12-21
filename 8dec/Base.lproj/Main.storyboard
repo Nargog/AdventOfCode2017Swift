@@ -58,6 +58,14 @@
                                     <action selector="btn12dec:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y8W-3x-GXU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyN-Ug-laD">
+                                <rect key="frame" x="132" y="508" width="110" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="13 dec/steg 1&amp;2"/>
+                                <connections>
+                                    <action selector="btn13Dec:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SdM-Hy-erP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

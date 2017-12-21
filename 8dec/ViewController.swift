@@ -20,6 +20,134 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func btn13Dec(_ sender: Any) {
+        
+        var emptyNode: [String] = ["S"]
+        
+        func getEmptyArray(withDepth:Int)-> [String]{
+            
+            var myArray = Array(repeatElement("", count: withDepth))
+            myArray[0] = "S"
+            // print(myArray)
+            return myArray
+        }
+        
+        
+        
+        
+        // Import data
+        // import PlaygroundSupport // Gör så att man kan spara alla filer man behöver i ett och samma bibliotek
+        
+        let fileURL = Bundle.main.url(forResource:"13dec", withExtension: "txt")
+        
+        // print("\(String(describing: fileURL))")
+        var fileData:String?
+        
+        do {
+            fileData = try String(contentsOf: fileURL!)
+            // print(fileData!)
+            
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        let indata = colonSeparated(data: fileData!)
+        
+        // MakeFirewall
+        
+        var fireWallMall = [[String]]()
+        var fireWall = [[[String]]]()
+        var sumSeverity = 0
+        var notCaught = true
+        
+        
+        for nisseIndex in 0...indata.count-1 {
+            
+            let tempDepth = (indata[nisseIndex][1])
+            fireWallMall.append(getEmptyArray(withDepth:Int(tempDepth)!))
+            
+            //Padding with empty  when having gaps
+            if nisseIndex < indata.count - 1{
+                if (Int(indata[nisseIndex+1][0])!) - nisseIndex > 1 {
+                    for _ in 2...Int(indata[nisseIndex+1][0])! - Int(indata[nisseIndex][0])! {
+                        fireWallMall.append(emptyNode)
+                        //   print(emptyNode)
+                    }        }}}
+        
+        // end MakeFireWall ---------------
+        
+        //print(fireWall.count)
+        // Skapa styrarray som har koll på riktning S
+        
+        
+        let styrArrayMall = Array(repeatElement(1, count: fireWallMall.count))
+        var styrArray = styrArrayMall
+        fireWall.append(fireWallMall)
+        let startValueTest = 2500000 // här börjar den skapa firewall
+        for indexMakeFireWall in 0...2500000 + startValueTest{
+            for indexOverFireWall in 0...fireWallMall.count-1{
+                
+                if fireWallMall[indexOverFireWall].count > 1 {
+                    //print(fireWall[i])
+                    let startS = fireWallMall[indexOverFireWall].index(of: "S")!
+                    
+                    if fireWallMall[indexOverFireWall].index(of: "S") == fireWallMall[indexOverFireWall].count - 1 {
+                        styrArray[indexOverFireWall] = -1
+                    } else if fireWallMall[indexOverFireWall].index(of: "S") == 0 {
+                        styrArray[indexOverFireWall] = 1
+                    }
+                    
+                    fireWallMall[indexOverFireWall][startS] = ""
+                    fireWallMall[indexOverFireWall][startS + styrArray[indexOverFireWall]] = "S"
+                }
+                
+            }
+            if indexMakeFireWall > startValueTest{
+                fireWall.append(fireWallMall)
+            }
+        }
+        
+        
+        var timeDelay = 0
+        // move S and () = timestep
+        repeat{
+            
+            sumSeverity = 0
+            notCaught = true
+            
+            for timeStep in timeDelay...fireWall[0].count-1 + timeDelay {
+                
+                
+                if notCaught{
+                    
+                    
+                    if fireWall[timeStep][timeStep-timeDelay].count > 1 {
+                        // print("paket på 0:\(timeSteps-timeDelay)")
+                        
+                        if fireWall[timeStep][timeStep-timeDelay][0] == "S" {
+                            notCaught = false
+                            sumSeverity += fireWall[timeStep].count * (timeStep-timeDelay)
+                        }}
+                    //Uppdatera brandvägg flytta S i alla
+                    
+                    // print(fireWall)
+                    
+                }
+            }
+            
+            print(" last post is Answer:\(timeDelay+startValueTest + 1)")
+            timeDelay += 1
+            styrArray = styrArrayMall
+            
+            
+            
+        } while !notCaught && timeDelay < 2500000
+        
+        
+        
+
+        
+    }
     
     @IBAction func btn12dec(_ sender: Any) {
         

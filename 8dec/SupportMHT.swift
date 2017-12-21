@@ -18,6 +18,20 @@ import Foundation
 
 }
  */
+
+func colonSeparated(data: String) -> [[String]] {
+    // Dela upp strängen i rader och kolumner
+    var result: [[String]] = []
+    let rows = data.components(separatedBy: "\n")
+    
+    // print(rows)
+    
+    for row in rows {
+        let columns = row.components(separatedBy: ":") //tab-separerad
+        result.append(columns)
+    }
+    return result
+}
 func csv(data: String) -> [[String]] {
     // Dela upp strängen i rader och kolumner
     var result: [[String]] = []
