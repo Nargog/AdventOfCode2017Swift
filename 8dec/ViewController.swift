@@ -20,6 +20,97 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func btn14Dec(_ sender: Any) {
+        var BinaryKnotHashRow = [String]()
+        var knotHashes = [[String]]()
+        var antalEttor = 0
+        
+        func findAndMarkNeighbour (row: Int, column:Int, regionNumber:Int){
+            knotHashes[row][column] = String(regionNumber)
+            
+            //up
+            if row > 0 {
+                if knotHashes[row-1][column] == "#"{
+                    findAndMarkNeighbour(row: row-1, column: column, regionNumber: regionNumber)
+                }
+            }
+            //right
+            if column < knotHashes[row].count-1 {
+                if knotHashes[row][column+1] == "#"{
+                    findAndMarkNeighbour(row: row, column: column+1, regionNumber: regionNumber)
+                }
+            }
+            //left
+            if column > 0 {
+                if knotHashes[row][column-1] == "#"{
+                    findAndMarkNeighbour(row: row, column: column-1, regionNumber: regionNumber)
+                }
+            }
+            //down
+            if row < knotHashes.count - 1 {
+                if knotHashes[row+1][column] == "#"{
+                    findAndMarkNeighbour(row: row+1, column: column, regionNumber: regionNumber)
+                }
+            }
+        }
+        
+   
+        for index in 0...127 {
+        let startString = "uugsqrei-"
+            let knotHash = getKnotHash(withString: startString + String(index))
+        var binaryKnotHash = ""
+       //
+        
+        for CharacterInKnotHash in knotHash {
+        
+        var binaryValue = String(Int(String(CharacterInKnotHash), radix: 16)!, radix: 2)
+        
+        while binaryValue.count < 4 {
+            binaryValue = "0"+binaryValue
+        }
+            binaryKnotHash += binaryValue
+        }
+        
+            
+            for BinaryKnotHashChar in binaryKnotHash {
+                if BinaryKnotHashChar == "1" {
+                    antalEttor += 1
+                    BinaryKnotHashRow.append("#")
+                } else {
+                    BinaryKnotHashRow.append(".")
+                }
+            }
+            
+        knotHashes.append(BinaryKnotHashRow)
+            BinaryKnotHashRow.removeAll()
+          
+        }
+       // print(knotHashes)
+        print("number of hashtags: \(antalEttor)")
+        
+        // Test for regions
+        
+        var noRegion = 0
+        
+        for indexRow in 0...knotHashes.count-1 {
+            for indexColumn in 0...knotHashes[indexRow].count-1 {
+                //FindNeighbours
+                if knotHashes[indexRow][indexColumn] == "#" {
+                    
+                    findAndMarkNeighbour(row: indexRow, column: indexColumn, regionNumber: noRegion)
+                    noRegion += 1
+                    
+                } // end find neighb..
+                
+                
+            }
+        }
+        
+       // print(knotHashes)
+        print("Number of regions: \(noRegion)")
+    }
+    
+    
     @IBAction func btn13Dec(_ sender: Any) {
         
         var emptyNode: [String] = ["S"]
