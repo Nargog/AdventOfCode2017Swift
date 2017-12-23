@@ -20,6 +20,87 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func btn15dec(_ sender: Any) {
+        
+        var compareA = ""
+        var compareB = ""
+        
+        var compareAStep2 = [String]()
+        var compareBStep2 = [String]()
+        
+        var generatorA = 116
+        var generatorB = 299
+        
+        var nextGeneratorA = 0
+        var nextGeneratorB = 0
+        
+        let factorA = 16807
+        let factorB = 48271
+        
+        let divisor = 2147483647
+        var antalMatch = 0
+        
+        var foundBForEval = false
+        var foundAForEval = false
+        
+        var antalTests = 5000000
+        
+        while  compareAStep2.count < antalTests || compareBStep2.count < antalTests{
+            
+            nextGeneratorA = generatorA*factorA%divisor
+            nextGeneratorB = generatorB*factorB%divisor
+            
+            if nextGeneratorA%4 == 0 {foundAForEval = true}
+            if nextGeneratorB%8 == 0 {foundBForEval = true}
+            
+            compareA = String(nextGeneratorA, radix:2)
+            while compareA.count < 16 {
+                compareA = "0"+compareA
+            }
+            
+            
+            compareB = String(nextGeneratorB, radix:2)
+            while compareB.count < 16 {
+                compareB = "0"+compareB
+            }
+            
+            
+            
+            compareA = String(compareA.suffix(16))
+            compareB = String(compareB.suffix(16))
+            
+            if foundAForEval{
+                compareAStep2.append(compareA)
+                foundAForEval = false
+            }
+            if foundBForEval{
+                compareBStep2.append(compareB)
+                foundBForEval = false
+            }
+            
+            
+            if compareB == compareA { antalMatch += 1}
+            
+            generatorA = nextGeneratorA
+            generatorB = nextGeneratorB
+            
+        }
+        
+        print("Antal match: \(antalMatch)")
+        
+        
+        //test the antalTests number of pairs in compareXStep2[] (5 milj)
+        var hitStep2 = 0
+        for index in 0...antalTests - 1 {
+            if compareAStep2[index] == compareBStep2[index] {
+                
+                hitStep2 += 1
+                print(hitStep2)
+            }
+            
+        }
+        
+    }
     @IBAction func btn14Dec(_ sender: Any) {
         var BinaryKnotHashRow = [String]()
         var knotHashes = [[String]]()
