@@ -50,12 +50,16 @@ class ViewController: UIViewController {
         let dancersString = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p"
         var dancersArray = separateString(inputString: dancersString, withSeparator: ",")
         let dancersArrayStart = dancersArray
-      
+       var matchIndex = 0
         var tempDancers = [String]()
+        var dancersArrayCollection = [[String]]()
         var indexSwap = ["q","q"]
         var stringSwap = ["q","q"]
         var tempString = ""
         var inputline = ""
+     
+        
+        for numberOfDancesIndex in 1...31 {
         
         for test in indataArray {
             inputline = test
@@ -91,18 +95,34 @@ class ViewController: UIViewController {
                 //print("p")
             default:
                 print("oops")
-            }
+            
         }
         
-        var utstring = ""
-        for texken in dancersArray{
-            utstring += texken
+         
+        }
+             print(dancersArray)
+           dancersArrayCollection.append(dancersArray)
+            if dancersArray == dancersArrayStart {
+                print(numberOfDancesIndex)
+                matchIndex = numberOfDancesIndex}
+            //print(dancersArray)
+        }
+        
+        
+        // -------------------------------
+        
+        
+    
+    var utstring = ""
+    
+    for texken in dancersArrayCollection[(1000000000 % matchIndex)-1]{
+    utstring += texken
         }
         
         print(utstring)
-        print(dancersArray)
+        print(dancersArrayCollection[(1000000000 % matchIndex)-1])
         
-        var differensArray = [Int]()
+/*        var differensArray = [Int]()
         var dancersArrayTemp =  [String]()
         
         
@@ -116,7 +136,7 @@ class ViewController: UIViewController {
             }
         }
         
-        print("difference over one dance. The new position gets value from last position: \(differensArray)")
+  /*      print("difference over one dance. The new position gets value from last position: \(differensArray)")
         dancersArray = dancersArrayStart
         
         for _ in 1...20 {
@@ -128,7 +148,7 @@ class ViewController: UIViewController {
             dancersArrayTemp.removeAll()
         }
             
-           
+      */
         
         print(dancersArray)
         
@@ -138,7 +158,7 @@ class ViewController: UIViewController {
         }
         
         print("weird the dance get cyclic every 10th time. Why isnt the answer : \(utstring)")
-        //answer jkmflcgpdbonihea
+        //answer jkmflcgpdbonihea */
 
         
     }
