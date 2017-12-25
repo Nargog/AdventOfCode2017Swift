@@ -19,6 +19,130 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+ 
+    @IBAction func btn16dec(_ sender: Any) {
+        
+        func separateString(inputString: String, withSeparator:String) -> [String] {
+            // Dela upp strängen i rader och kolumner
+            var result = [String]()
+            result = inputString.components(separatedBy: withSeparator)
+            
+            
+            return result
+        }
+        let fileURL = Bundle.main.url(forResource:"dec16", withExtension: "txt")
+        
+        // print("\(String(describing: fileURL))")
+        var fileData:String?
+        
+        do {
+            fileData = try String(contentsOf: fileURL!)
+            // print(fileData!)
+            
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        let indataArray = separateString(inputString: fileData!, withSeparator: ",")
+        
+     
+        
+        let dancersString = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p"
+        var dancersArray = separateString(inputString: dancersString, withSeparator: ",")
+        let dancersArrayStart = dancersArray
+      
+        var tempDancers = [String]()
+        var indexSwap = ["q","q"]
+        var stringSwap = ["q","q"]
+        var tempString = ""
+        var inputline = ""
+        
+        for test in indataArray {
+            inputline = test
+            //var operation = "\(inputline.first ?? "q")"
+            switch  inputline.remove(at: inputline.startIndex) {
+            case "s":
+                //print("s")
+                
+                for index in (dancersArray.count - Int(inputline)!)...dancersArray.count-1{
+                    tempDancers.append( dancersArray[index])
+                }
+                for index in 0...(dancersArray.count - 1 - Int(inputline)!){
+                    tempDancers.append( dancersArray[index])
+                }
+                dancersArray = tempDancers
+                tempDancers.removeAll()
+                
+            case "x" :
+                //print("x")
+                indexSwap = separateString(inputString: inputline, withSeparator: "/")
+                tempString = dancersArray[Int(indexSwap[0])!]
+                dancersArray[Int(indexSwap[0])!] = dancersArray[Int(indexSwap[1])!]
+                dancersArray[Int(indexSwap[1])!] = tempString
+            case "p":
+                stringSwap = separateString(inputString: inputline, withSeparator: "/")
+                for index in 0...dancersArray.count - 1 {
+                    if stringSwap[0] == dancersArray[index]{indexSwap[0] = String(index)}
+                    if stringSwap[1] == dancersArray[index]{indexSwap[1] = String(index)}
+                }
+                tempString = dancersArray[Int(indexSwap[0])!]
+                dancersArray[Int(indexSwap[0])!] = dancersArray[Int(indexSwap[1])!]
+                dancersArray[Int(indexSwap[1])!] = tempString
+                //print("p")
+            default:
+                print("oops")
+            }
+        }
+        
+        var utstring = ""
+        for texken in dancersArray{
+            utstring += texken
+        }
+        
+        print(utstring)
+        print(dancersArray)
+        
+        var differensArray = [Int]()
+        var dancersArrayTemp =  [String]()
+        
+        
+     //   for _ in 1...9 {
+        
+             differensArray.removeAll()
+        for tecken in dancersArray {
+            for index in 0...dancersArrayStart.count - 1 {
+                if tecken == dancersArrayStart[index] { differensArray.append(index)}
+                
+            }
+        }
+        
+        print("difference over one dance. The new position gets value from last position: \(differensArray)")
+        dancersArray = dancersArrayStart
+        
+        for _ in 1...20 {
+            for index in 0...dancersArrayStart.count - 1 {
+                dancersArrayTemp.append(dancersArray[differensArray[index]])
+            }
+            dancersArray = dancersArrayTemp
+            print(dancersArray)
+            dancersArrayTemp.removeAll()
+        }
+            
+           
+        
+        print(dancersArray)
+        
+        utstring = ""
+        for texken in dancersArray{
+            utstring += texken
+        }
+        
+        print("weird the dance get cyclic every 10th time. Why isnt the answer : \(utstring)")
+        //answer jkmflcgpdbonihea
+
+        
+    }
+    
     
     @IBAction func btn15dec(_ sender: Any) {
         
@@ -43,7 +167,7 @@ class ViewController: UIViewController {
         var foundBForEval = false
         var foundAForEval = false
         
-        var antalTests = 5000000
+        let antalTests = 5000000
         
         while  compareAStep2.count < antalTests || compareBStep2.count < antalTests{
             
