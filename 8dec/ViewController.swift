@@ -19,7 +19,251 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
- 
+    
+    
+    @IBAction func btn18dec(_ sender: Any) {
+        
+        let fileURL = Bundle.main.url(forResource:"dec18", withExtension: "txt")
+        
+        // print("\(String(describing: fileURL))")
+        var fileData:String?
+        
+        do {
+            fileData = try String(contentsOf: fileURL!)
+            // print(fileData!)
+            
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        var noSentFromP1 = 0
+        var commandArray = spaceSeparated(data: fileData!)
+        
+        var P0waitingforInput = false
+        var P1waitingforInput = false
+        
+        var sndOutP0 = [Int]()
+        var sndOutP1 = [Int]()
+        
+        let registersInput = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p"
+        
+        let result = registersInput.components(separatedBy: ",")
+        
+        var registersP0 = [String:Int]()
+        var registersP1 = [String:Int]()
+        
+        for register in result {
+            registersP0[register] = 0
+            registersP1[register] = 0
+        }
+       
+        registersP1["p"] = 1
+        print(registersP1)
+        
+        
+        var pointerP0 = 0
+        var pointerP1 = 0
+        
+        //    registers
+        
+        //Setup complete
+        
+        
+        func Program1() {
+            while pointerP1 < commandArray.count && pointerP1 >= 0 {
+                switch commandArray[pointerP1][0]{
+                case "set":
+                   // print("set")
+                    registersP1[commandArray[pointerP1][1]] = (Int(commandArray[pointerP1][2]) ?? registersP1[commandArray[pointerP1][2]]!)
+                    pointerP1 += 1
+                    
+                case "add":
+                   // print("add")
+                    registersP1[commandArray[pointerP1][1]] = (Int(commandArray[pointerP1][2]) ?? registersP1[commandArray[pointerP1][2]]!) + registersP1[commandArray[pointerP1][1]]!
+                    pointerP1 += 1
+                case "mul":
+                   // print("mul")
+                    registersP1[commandArray[pointerP1][1]] = (Int(commandArray[pointerP1][2]) ?? registersP1[commandArray[pointerP1][2]]!)  * registersP1[commandArray[pointerP1][1]]!
+                    pointerP1 += 1
+                case "mod":
+                 //   print("mod")
+                    registersP1[commandArray[pointerP1][1]] = registersP1[commandArray[pointerP1][1]]! % (Int(commandArray[pointerP1][2]) ?? registersP1[commandArray[pointerP1][2]]!)
+                    pointerP1 += 1
+                case "snd":
+                   // print("snd")
+                    sndOutP1.append(registersP1[commandArray[pointerP1][1]]!)
+                    pointerP1 += 1
+                    noSentFromP1 += 1
+                    print("No sent numbers : \(noSentFromP1)")
+                    P0waitingforInput = false
+                    return
+                case "rcv":
+                   // print("rcv")
+                    
+                    //    print(sndOutP1)
+                        if sndOutP0.isEmpty {
+                            P1waitingforInput = true
+                            if P0waitingforInput {
+                                pointerP1 = -99
+                            }
+                            return
+                        } else {
+                        registersP1[commandArray[pointerP1][1]] = sndOutP0.remove(at: 0)
+                        pointerP1 += 1
+                        
+                        }
+                    
+                    
+                case "jgz":
+                //    print("jgz")
+                    if registersP1[commandArray[pointerP1][1]] ?? Int(commandArray[pointerP1][1])! > 0
+                    {pointerP1 += Int(commandArray[pointerP1][2]) ?? registersP1[commandArray[pointerP1][1]]! }
+                    else {
+                        pointerP1 += 1
+                    }
+                default:
+                    print("ooops")
+                    
+                }
+            }
+            //return
+        }
+        
+        //import PlaygroundSupport // Gör så att man kan spara alla filer man behöver i ett och samma bibliotek
+        
+        print(registersP0)
+        
+        while pointerP0 < commandArray.count && pointerP0 >= 0 {
+            switch commandArray[pointerP0][0]{
+            case "set":
+              
+                registersP0[commandArray[pointerP0][1]] = (Int(commandArray[pointerP0][2]) ?? registersP0[commandArray[pointerP0][2]]!)
+                
+            //    print("set")
+                //print(registersP0.count)
+                pointerP0 += 1
+                
+            case "add":
+            //    print("add")
+                registersP0[commandArray[pointerP0][1]] = (Int(commandArray[pointerP0][2]) ?? registersP0[commandArray[pointerP0][2]]!) + registersP0[commandArray[pointerP0][1]]!
+                pointerP0 += 1
+            case "mul":
+            //    print("mul")
+                registersP0[commandArray[pointerP0][1]] = (Int(commandArray[pointerP0][2]) ?? registersP0[commandArray[pointerP0][2]]!)  * registersP0[commandArray[pointerP0][1]]!
+               // print(registersP0)
+                pointerP0 += 1
+            case "mod":
+             //   print("mod")
+                registersP0[commandArray[pointerP0][1]] = registersP0[commandArray[pointerP0][1]]! % (Int(commandArray[pointerP0][2]) ?? registersP0[commandArray[pointerP0][2]]!)
+               // print(registersP0)
+                pointerP0 += 1
+            case "snd":
+            //    print("snd")
+                sndOutP0.append(registersP0[commandArray[pointerP0][1]]!)
+                
+             //   print(registersP0.count)
+                pointerP0 += 1
+                P1waitingforInput = false
+                Program1()
+            case "rcv":
+            //    print("rcv")
+                
+             //       print(sndOutP0.count)
+                    if sndOutP1.isEmpty {
+                        P0waitingforInput = true
+                        if P1waitingforInput {pointerP0 = -99}
+                        Program1()
+                      //  print("one hop")
+                    } else {
+                        registersP0[commandArray[pointerP0][1]] = sndOutP1.remove(at: 0)
+                        pointerP0 += 1
+                }
+                        
+                    
+                
+                
+            case "jgz":
+            //    print("jgz")
+                if registersP0[commandArray[pointerP0][1]] ?? Int(commandArray[pointerP0][1])! > 0
+                {pointerP0 += Int(commandArray[pointerP0][2]) ?? registersP0[commandArray[pointerP0][1]]! }
+                else {
+                    pointerP0 += 1
+                }
+           //     print("pointerP0 \(pointerP0)")
+            default:
+                print("ooops")
+                
+            }
+        }
+        
+   //     print(registersP0)
+        
+
+        
+    }
+    
+    
+    
+    @IBAction func btn17decsteg2(_ sender: Any) {
+        var result = 0
+        var inputString = 1
+        var inputStringLength = 1
+        var position = 0
+        let puzzleInput  = 304
+       // let inputLine:[String] = ["0"] //["3","0","4"]
+        let numberOfInputs = 50000000
+        
+        for index in 1...numberOfInputs {
+            position += puzzleInput
+            position = position % inputStringLength
+            
+            
+            if position == 0 { result = index}
+            position += 1
+            inputStringLength += 1
+            
+            
+            
+            //print(inputLine)
+            inputString += 1
+        }
+        //print(inputLine[position + 1])
+        
+        print(result)
+        
+    }
+    @IBAction func btn17dec(_ sender: Any) {
+        var inputString = 1
+        var position = 0
+        let puzzleInput = 304
+        var inputLine:[String] = ["0"] //["3","0","4"]
+        let numberOfInputs = 50000000
+        
+        for index in 1...numberOfInputs {
+            position += puzzleInput
+            position = position % inputLine.count
+            
+            if position == inputLine.count - 1 {
+                inputLine.append("\(index)")
+                position += 1
+            } else {
+                
+            position += 1
+            inputLine.insert("\(index)", at: position)
+            
+            
+            }
+            //print(inputLine)
+            inputString += 1
+        }
+        print(inputLine[position + 1])
+        
+        for findZeroIndex in 0...inputLine.count - 1{
+            if inputLine[findZeroIndex] == "0" { print(inputLine[(findZeroIndex + 1) % inputLine.count])}
+        }
+        //0 (9) 5  7  2  4  3  8  6  1
+    }
+    
     @IBAction func btn16dec(_ sender: Any) {
         
         func separateString(inputString: String, withSeparator:String) -> [String] {

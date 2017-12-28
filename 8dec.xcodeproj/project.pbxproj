@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		492310681FEF1C69009A064D /* dec16.txt in Resources */ = {isa = PBXBuildFile; fileRef = 492310671FEF1C69009A064D /* dec16.txt */; };
+		4927472A1FF2FE9500B639E5 /* dec18.txt in Resources */ = {isa = PBXBuildFile; fileRef = 492747281FF2FE9500B639E5 /* dec18.txt */; };
+		4927472B1FF2FE9500B639E5 /* dec18tst.txt in Resources */ = {isa = PBXBuildFile; fileRef = 492747291FF2FE9500B639E5 /* dec18tst.txt */; };
 		494125131FDF349D00F1DD42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494125121FDF349D00F1DD42 /* AppDelegate.swift */; };
 		494125151FDF349D00F1DD42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494125141FDF349D00F1DD42 /* ViewController.swift */; };
 		494125181FDF349D00F1DD42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494125161FDF349D00F1DD42 /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		492310671FEF1C69009A064D /* dec16.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dec16.txt; sourceTree = "<group>"; };
+		492747281FF2FE9500B639E5 /* dec18.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dec18.txt; sourceTree = "<group>"; };
+		492747291FF2FE9500B639E5 /* dec18tst.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dec18tst.txt; sourceTree = "<group>"; };
 		4941250F1FDF349D00F1DD42 /* 8dec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 8dec.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		494125121FDF349D00F1DD42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		494125141FDF349D00F1DD42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 		494125111FDF349D00F1DD42 /* 8dec */ = {
 			isa = PBXGroup;
 			children = (
+				492747281FF2FE9500B639E5 /* dec18.txt */,
+				492747291FF2FE9500B639E5 /* dec18tst.txt */,
 				494125121FDF349D00F1DD42 /* AppDelegate.swift */,
 				494125401FE05C2800F1DD42 /* dec8.txt */,
 				49C768791FE1DEFF0037ADFA /* 9dec.txt */,
@@ -263,10 +269,12 @@
 				4999AA3F1FE6C08C00F4E315 /* dec11.txt in Resources */,
 				4941251D1FDF349D00F1DD42 /* LaunchScreen.storyboard in Resources */,
 				4941251A1FDF349D00F1DD42 /* Assets.xcassets in Resources */,
+				4927472A1FF2FE9500B639E5 /* dec18.txt in Resources */,
 				49C585DC1FE84CAC00D221DF /* 12dectst.txt in Resources */,
 				49F799BB1FEB2B6D0007ABF2 /* 13dectst.txt in Resources */,
 				494125411FE05C2800F1DD42 /* dec8.txt in Resources */,
 				49F799B71FEB24190007ABF2 /* 13dec.txt in Resources */,
+				4927472B1FF2FE9500B639E5 /* dec18tst.txt in Resources */,
 				49C585DD1FE84CAC00D221DF /* 12dec.txt in Resources */,
 				494125181FDF349D00F1DD42 /* Main.storyboard in Resources */,
 				492310681FEF1C69009A064D /* dec16.txt in Resources */,

@@ -83,11 +83,35 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Us1-Iz-Yay">
-                                <rect key="frame" x="142" y="280" width="91" height="30"/>
+                                <rect key="frame" x="128" y="280" width="119" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="16 dec/steg 1"/>
+                                <state key="normal" title="16 dec/steg 1 &amp; 2"/>
                                 <connections>
                                     <action selector="btn16dec:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JGl-zV-ZJw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNz-5O-Hok">
+                                <rect key="frame" x="134" y="242" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="17 dec/ steg 1"/>
+                                <connections>
+                                    <action selector="btn17dec:" destination="BYZ-38-t0r" eventType="touchUpInside" id="77X-QG-KWh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fso-ax-Qht">
+                                <rect key="frame" x="135" y="204" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="17 dec steg 2"/>
+                                <connections>
+                                    <action selector="btn17decsteg2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RwW-mh-FdV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clX-YB-sG5">
+                                <rect key="frame" x="141" y="166" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="18 dec /steg 1"/>
+                                <connections>
+                                    <action selector="btn18dec:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wz8-lJ-fvF"/>
                                 </connections>
                             </button>
                         </subviews>
