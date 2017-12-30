@@ -8,16 +8,25 @@
 
 import Foundation
 
-/*func toString( dateFormat format  : String ) -> String
-{
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = format
-    return dateFormatter.string(from: self)
-}
- 
 
+
+func myGetStringFromFile (filename: String)-> String {
+    let fileURL = Bundle.main.url(forResource:filename, withExtension: "txt")
+    
+    // print("\(String(describing: fileURL))")
+    var fileData:String?
+    
+    do {
+        fileData = try String(contentsOf: fileURL!)
+        return fileData!
+        // print(fileData!)
+        
+    } catch {
+        print(error.localizedDescription)
+        return error.localizedDescription
+    }
 }
- */
+
 
 func getKnotHash(withString:String)-> String {
     
@@ -33,7 +42,6 @@ func getKnotHash(withString:String)-> String {
         let anInt = Int(stringSegment)
         indataLength.append(anInt!)
     }
-    
     
     
     
@@ -150,6 +158,27 @@ func csv(data: String) -> [[String]] {
     }
     return result
 }
+
+
+func splitIntoRowsandCharachters (data: String) -> [[Character]] {
+    // Dela upp strängen i rader och kolumner
+    var result: [[Character]] = []
+    let rows = data.components(separatedBy: "\n")
+    
+    //print(rows)
+    
+    for row in rows {
+        var tempRowArray = [Character]()
+        for tecken in row {
+            tempRowArray.append(tecken)
+        }
+        
+        let columns = tempRowArray
+        result.append(columns)
+    }
+    return result
+}
+
 func spaceSeparated(data: String) -> [[String]] {
     // Dela upp strängen i rader och kolumner
     var result: [[String]] = []

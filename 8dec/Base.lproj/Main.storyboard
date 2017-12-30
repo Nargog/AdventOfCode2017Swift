@@ -107,11 +107,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clX-YB-sG5">
-                                <rect key="frame" x="141" y="166" width="95" height="30"/>
+                                <rect key="frame" x="140" y="166" width="98" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="18 dec /steg 1"/>
+                                <state key="normal" title="18 dec /steg 2"/>
                                 <connections>
                                     <action selector="btn18dec:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wz8-lJ-fvF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPd-3i-2ai">
+                                <rect key="frame" x="139" y="128" width="99" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="19 dec / steg 1"/>
+                                <connections>
+                                    <action selector="btn19dec:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jNx-P0-Hd0"/>
                                 </connections>
                             </button>
                         </subviews>

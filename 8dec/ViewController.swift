@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -19,6 +20,61 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+   
+    @IBAction func btn19dec(_ sender: Any) {
+        var test = ""
+        var myPointer:(rowValue: Int, columnValue: Int)
+        myPointer.columnValue = 0; myPointer.rowValue = 0
+        
+        var direction:(rowDirection: Int , columnDirection: Int )
+        direction.columnDirection = 0 ; direction.rowDirection = 1
+    
+        let input = myGetStringFromFile(filename: "dec19")
+        
+        var myMaze = [[Character]]()
+        var stop = false
+        
+        myMaze = splitIntoRowsandCharachters(data: input)
+        
+       // print(myMaze)
+        // get startPoint
+        for index in 0...myMaze[0].count-1 {
+            print(myMaze[0][index])
+            if myMaze[0][index] == "|" {myPointer.columnValue = index; myPointer.rowValue = 0}
+        }
+       var antalSteps = 0
+        while !stop {
+        antalSteps += 1
+        switch myMaze[myPointer.rowValue][myPointer.columnValue] {
+        case "+":
+            print("+")
+            if myMaze[myPointer.rowValue + direction.columnDirection][myPointer.columnValue + direction.rowDirection] == " "{
+                let tempDirection = direction.rowDirection
+                direction.rowDirection = -1 * direction.columnDirection
+                direction.columnDirection = -1 * tempDirection
+            } else {
+                let tempDirection = direction.rowDirection
+                direction.rowDirection =  direction.columnDirection
+                direction.columnDirection = tempDirection
+            }
+        case "|":
+            print("| keep on")
+        case "-":
+            print("- keep on")
+        case " ":
+            print("  -stop")
+            stop = true
+        default:
+            test = test + "\(myMaze[myPointer.rowValue][myPointer.columnValue])"
+            print("\(myMaze[myPointer.rowValue][myPointer.columnValue]) keep on")
+        }
+            myPointer.rowValue += direction.rowDirection
+            myPointer.columnValue += direction.columnDirection
+        }
+        
+        print("Ordet är : \(test) och steg: \(antalSteps-1)")
+    }
+    
     
     
     @IBAction func btn18dec(_ sender: Any) {

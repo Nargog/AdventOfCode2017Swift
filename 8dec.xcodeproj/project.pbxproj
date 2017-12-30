@@ -19,6 +19,8 @@
 		494125331FDF349D00F1DD42 /* _decUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494125321FDF349D00F1DD42 /* _decUITests.swift */; };
 		494125411FE05C2800F1DD42 /* dec8.txt in Resources */ = {isa = PBXBuildFile; fileRef = 494125401FE05C2800F1DD42 /* dec8.txt */; };
 		494125431FE05CC400F1DD42 /* SupportMHT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494125421FE05CC400F1DD42 /* SupportMHT.swift */; };
+		496730711FF7CE8000EDA54F /* dec19tst.txt in Resources */ = {isa = PBXBuildFile; fileRef = 496730701FF7CE8000EDA54F /* dec19tst.txt */; };
+		496730731FF7D21100EDA54F /* dec19.txt in Resources */ = {isa = PBXBuildFile; fileRef = 496730721FF7D21100EDA54F /* dec19.txt */; };
 		4999AA3F1FE6C08C00F4E315 /* dec11.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4999AA3E1FE6C08C00F4E315 /* dec11.txt */; };
 		49C585DC1FE84CAC00D221DF /* 12dectst.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49C585DA1FE84CAC00D221DF /* 12dectst.txt */; };
 		49C585DD1FE84CAC00D221DF /* 12dec.txt in Resources */ = {isa = PBXBuildFile; fileRef = 49C585DB1FE84CAC00D221DF /* 12dec.txt */; };
@@ -63,6 +65,8 @@
 		494125341FDF349D00F1DD42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		494125401FE05C2800F1DD42 /* dec8.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dec8.txt; sourceTree = "<group>"; };
 		494125421FE05CC400F1DD42 /* SupportMHT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportMHT.swift; sourceTree = "<group>"; };
+		496730701FF7CE8000EDA54F /* dec19tst.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dec19tst.txt; sourceTree = "<group>"; };
+		496730721FF7D21100EDA54F /* dec19.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dec19.txt; sourceTree = "<group>"; };
 		4999AA3E1FE6C08C00F4E315 /* dec11.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dec11.txt; sourceTree = "<group>"; };
 		49C585DA1FE84CAC00D221DF /* 12dectst.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 12dectst.txt; sourceTree = "<group>"; };
 		49C585DB1FE84CAC00D221DF /* 12dec.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 12dec.txt; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 				494125121FDF349D00F1DD42 /* AppDelegate.swift */,
 				494125401FE05C2800F1DD42 /* dec8.txt */,
 				49C768791FE1DEFF0037ADFA /* 9dec.txt */,
+				496730721FF7D21100EDA54F /* dec19.txt */,
+				496730701FF7CE8000EDA54F /* dec19tst.txt */,
 				4999AA3E1FE6C08C00F4E315 /* dec11.txt */,
 				492310671FEF1C69009A064D /* dec16.txt */,
 				49F799BA1FEB2B6D0007ABF2 /* 13dectst.txt */,
@@ -271,11 +277,13 @@
 				4941251A1FDF349D00F1DD42 /* Assets.xcassets in Resources */,
 				4927472A1FF2FE9500B639E5 /* dec18.txt in Resources */,
 				49C585DC1FE84CAC00D221DF /* 12dectst.txt in Resources */,
+				496730711FF7CE8000EDA54F /* dec19tst.txt in Resources */,
 				49F799BB1FEB2B6D0007ABF2 /* 13dectst.txt in Resources */,
 				494125411FE05C2800F1DD42 /* dec8.txt in Resources */,
 				49F799B71FEB24190007ABF2 /* 13dec.txt in Resources */,
 				4927472B1FF2FE9500B639E5 /* dec18tst.txt in Resources */,
 				49C585DD1FE84CAC00D221DF /* 12dec.txt in Resources */,
+				496730731FF7D21100EDA54F /* dec19.txt in Resources */,
 				494125181FDF349D00F1DD42 /* Main.storyboard in Resources */,
 				492310681FEF1C69009A064D /* dec16.txt in Resources */,
 			);
