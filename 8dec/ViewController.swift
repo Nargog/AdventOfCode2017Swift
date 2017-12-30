@@ -42,34 +42,39 @@ class ViewController: UIViewController {
             print(myMaze[0][index])
             if myMaze[0][index] == "|" {myPointer.columnValue = index; myPointer.rowValue = 0}
         }
+        
+    
        var antalSteps = 0
+        
         while !stop {
-        antalSteps += 1
-        switch myMaze[myPointer.rowValue][myPointer.columnValue] {
-        case "+":
-            print("+")
-            if myMaze[myPointer.rowValue + direction.columnDirection][myPointer.columnValue + direction.rowDirection] == " "{
-                let tempDirection = direction.rowDirection
-                direction.rowDirection = -1 * direction.columnDirection
-                direction.columnDirection = -1 * tempDirection
-            } else {
-                let tempDirection = direction.rowDirection
-                direction.rowDirection =  direction.columnDirection
-                direction.columnDirection = tempDirection
-            }
-        case "|":
-            print("| keep on")
-        case "-":
-            print("- keep on")
-        case " ":
-            print("  -stop")
-            stop = true
-        default:
-            test = test + "\(myMaze[myPointer.rowValue][myPointer.columnValue])"
-            print("\(myMaze[myPointer.rowValue][myPointer.columnValue]) keep on")
-        }
-            myPointer.rowValue += direction.rowDirection
-            myPointer.columnValue += direction.columnDirection
+                antalSteps += 1
+                switch myMaze[myPointer.rowValue][myPointer.columnValue] {
+                case "+":
+                    print("+")
+                    // Turn 90 degrees and dont go in the the direction of " ". If the other direction is " " the Maze stops next time
+                    if myMaze[myPointer.rowValue + direction.columnDirection][myPointer.columnValue + direction.rowDirection] == " "{
+                        let tempDirection = direction.rowDirection
+                        direction.rowDirection = -1 * direction.columnDirection
+                        direction.columnDirection = -1 * tempDirection
+                    } else {
+                        let tempDirection = direction.rowDirection
+                        direction.rowDirection =  direction.columnDirection
+                        direction.columnDirection = tempDirection
+                    }
+                case "|":
+                    print("| keep on")
+                case "-":
+                    print("- keep on")
+                case " ":
+                    print("  -stop")
+                    stop = true
+                default:
+                    // if character, store
+                    test = test + "\(myMaze[myPointer.rowValue][myPointer.columnValue])"
+                    print("\(myMaze[myPointer.rowValue][myPointer.columnValue]) keep on")
+                }
+                    myPointer.rowValue += direction.rowDirection
+                    myPointer.columnValue += direction.columnDirection
         }
         
         print("Ordet är : \(test) och steg: \(antalSteps-1)")
